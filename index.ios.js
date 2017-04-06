@@ -26,8 +26,7 @@ var powerpoint_test = React.createClass({
     }
     RNFS.downloadFile(options).promise.then(res => {
       this.setState({downloadComplete: true});
-      console.log("file downloaded")
-      console.log(options.toFile)
+      console.log("Sample powerpoint file successfully downloaded to " + options.toFile);
     }).catch(err => {
       console.log("Error downloading file: ", err);
     });
