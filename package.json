@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.1",
+    "react-native-document-controller": "0.0.3",
     "react-native-fs": "^2.1.0-rc.1"
   },
   "devDependencies": {

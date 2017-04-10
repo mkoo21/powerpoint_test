@@ -9,9 +9,11 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  NativeModules
 } from 'react-native';
 import RNFS from 'react-native-fs';
+var DocumentController = NativeModules.DocumentController;
 
 var powerpoint_test = React.createClass({
   getInitialState(){
@@ -27,6 +29,9 @@ var powerpoint_test = React.createClass({
     RNFS.downloadFile(options).promise.then(res => {
       this.setState({downloadComplete: true});
       console.log("Sample powerpoint file successfully downloaded to " + options.toFile);
+      DocumentController.show({
+        file: 'file://' + RNFS.DocumentDirectoryPath + "/samplePPTX.pptx"
+      })
     }).catch(err => {
       console.log("Error downloading file: ", err);
     });
